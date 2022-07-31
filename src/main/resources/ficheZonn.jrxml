@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="zonn" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2abb28d8-4b1e-40db-a281-edb5ee4432b8">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="numero" class="java.lang.String"/>
+	<field name="farine" class="java.lang.Integer"/>
+	<field name="sucr" class="java.lang.Integer"/>
+	<field name="oeil" class="java.lang.Integer"/>
+	<field name="prenom" class="java.lang.String"/>
+	<field name="nom" class="java.lang.String"/>
+	<field name="cin" class="java.lang.String"/>
+	<field name="date" class="java.util.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="90" splitType="Stretch">
+			<staticText>
+				<reportElement x="360" y="19" width="177" height="71" uuid="443129cf-d269-431c-8026-e79e8b8c20a1"/>
+				<textElement textAlignment="Center">
+					<font fontName="arial1" size="10"/>
+				</textElement>
+				<text><![CDATA[المملكة المغربية
+ وزارة الداخلية
+ولاية جهة العيون الساقية الحمراء
+عمالة إقليم العيون
+الكتابة العامة
+قسم الشؤون الإقتصادية والتنسيق
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="30" width="70" height="20" uuid="11730d81-f297-441a-a640-ccdfe626f9b2"/>
+				<textElement>
+					<font fontName="arial1" size="13"/>
+				</textElement>
+				<text><![CDATA[العيون في :]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="70" y="30" width="100" height="30" uuid="52cce749-e772-4c04-9140-4e0adb2aac7d"/>
+				<textElement textAlignment="Right">
+					<font fontName="arial1" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{date}.getTime())]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="47" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="19" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="518" splitType="Stretch">
+			<staticText>
+				<reportElement x="30" y="140" width="70" height="29" uuid="b27b096d-bc3f-4882-a14e-35a45c5024d0"/>
+				<textElement>
+					<font fontName="arial1" size="22" isBold="true" isItalic="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[-العيون-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="190" width="60" height="30" uuid="0a909ce9-4b9d-4746-9f48-8d7faa6dcb90"/>
+				<textElement>
+					<font fontName="arial1" size="19"/>
+				</textElement>
+				<text><![CDATA[سند عدد :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="230" width="190" height="30" uuid="99a926d1-e8f0-4f12-888d-3cb746d20ed0"/>
+				<textElement textAlignment="Right">
+					<font fontName="arial1" size="18"/>
+				</textElement>
+				<text><![CDATA[ من أجل تسليم الكميات التالية :
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="260" width="100" height="30" uuid="401abc5f-780d-43a3-bdbd-3317ee8a2041"/>
+				<textElement textAlignment="Right">
+					<font fontName="arial1" size="16"/>
+				</textElement>
+				<text><![CDATA[أكياس من الدقيق]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="290" width="130" height="30" uuid="a7f2322f-8417-48cd-9e5d-35d3ea1b5318"/>
+				<textElement textAlignment="Right">
+					<font fontName="arial1" size="16"/>
+				</textElement>
+				<text><![CDATA[صناديق من السكر القالب]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="320" width="130" height="30" uuid="0fed503e-9bbf-4c9b-abcd-401fc8819784"/>
+				<textElement textAlignment="Right">
+					<font fontName="arial1" size="16"/>
+				</textElement>
+				<text><![CDATA[صناديق من الزيت]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="412" y="350" width="93" height="30" uuid="bf4ba3c2-e6ce-47ed-8853-6a5b326e52ad"/>
+				<textElement textAlignment="Left">
+					<font fontName="arial1" size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[لفائدة السيد : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="350" width="70" height="30" uuid="3e465dd2-e64e-4346-8dc3-b39db1ac4d0b"/>
+				<textElement textAlignment="Left">
+					<font fontName="arial1" size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ر ب ت و :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="20" width="471" height="80" uuid="6c216b8b-18bb-4c93-a17a-674f9995364e"/>
+				<textElement textAlignment="Center">
+					<font fontName="arial1" size="22" isBold="false"/>
+				</textElement>
+				<text><![CDATA[إلى
+ السيدة رئيسة المصلحة الجهوية للمكتب الوطني المهني للحبوب
+ والقطاني
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="190" width="100" height="30" uuid="d1264ce5-8930-4c52-a58e-554198894de1"/>
+				<textElement textAlignment="Right">
+					<font fontName="arial1" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="427" y="260" width="39" height="30" uuid="0ce05cfc-228d-4f81-bff1-16deb0d6ef31"/>
+				<textElement textAlignment="Center">
+					<font fontName="arial1" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{farine}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="290" width="39" height="30" uuid="3a0ed735-8992-41c8-b238-88187a434940"/>
+				<textElement textAlignment="Center">
+					<font fontName="arial1" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sucr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="320" width="39" height="30" uuid="efce9c13-5b8d-43e9-8242-58889206ff3b"/>
+				<textElement textAlignment="Center">
+					<font fontName="arial1" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{oeil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="322" y="350" width="90" height="30" uuid="0261f9d3-28bf-4e63-b42f-18244cbf0a33"/>
+				<textElement textAlignment="Left">
+					<font fontName="arial1" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{prenom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="45" y="352" width="90" height="30" uuid="87627acf-a766-42db-bc0b-9a6bcc58221a"/>
+				<textElement textAlignment="Right">
+					<font fontName="arial1" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="225" y="350" width="90" height="30" uuid="92f9e294-a710-481e-aac8-0109cfc154c7"/>
+				<textElement textAlignment="Right">
+					<font fontName="arial1" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nom}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="475" y="250" width="38" height="30" uuid="bea20485-b54d-49e6-b873-3697c94544b5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="475" y="280" width="38" height="30" uuid="594183bb-58a6-4930-8914-ffbae65bbafe"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="475" y="310" width="38" height="30" uuid="b0acabf3-e35c-451f-a618-9d2811f005ed"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="480" width="100" height="30" uuid="12fb36e8-0ecf-4680-bec9-f4db3ee79e78"/>
+				<textElement textAlignment="Center">
+					<font fontName="arial1" size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[الوالي]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="378" width="250" height="30" uuid="3a42613b-4f1e-45d6-9a17-01a7d1e08a02"/>
+				<textElement textAlignment="Right">
+					<font fontName="arial1" size="16"/>
+				</textElement>
+				<text><![CDATA[في إطار الحصة المخصصة للمعوزين]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="51" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="45" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="20" splitType="Stretch"/>
+	</summary>
+</jasperReport>
