@@ -1,4 +1,4 @@
-package com.dsic.FicheInfo.services.sec;
+package com.dsic.FicheInfo.sec;
 
 import java.io.IOException;
 import java.util.ArrayList;

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_Landscape" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4b48e66f-ccd7-4d5c-b625-df9dc47e5dc2">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="83" splitType="Stretch">
+			<staticText>
+				<reportElement x="680" y="0" width="120" height="79" uuid="6a2f68db-39b5-4dca-9682-e173d7654689"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="arial1"/>
+				</textElement>
+				<text><![CDATA[المملكة المغربية  
+وزارة الداخلية 
+ولاية جهة العيون الساقية الحمراء 
+عمالة اقليم العيون 
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="0" width="290" height="79" uuid="9d1dd2d2-5d9f-4171-829d-11dc37ab77ff"/>
+				<textFieldExpression><![CDATA["Hello"+$F{id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="700" y="3" width="100" height="30" uuid="3c6b10e1-3b3d-4bc2-b00f-c6b97413ce23"/>
+				<box topPadding="1" leftPadding="0" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="arial1"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="600" y="3" width="100" height="30" uuid="023baf6a-ab59-470c-ba99-51e990ff26d5"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="arial1"/>
+				</textElement>
+				<text><![CDATA[رمز المستفيد]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="3" width="100" height="30" uuid="6c00db13-9c2d-47e8-a4b8-0ffcac59eb4c"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="arial1"/>
+				</textElement>
+				<text><![CDATA[الإسم الكامل]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="500" y="3" width="100" height="30" uuid="9d67e1e1-0587-45e6-9237-11ad754a3937"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="arial1"/>
+				</textElement>
+				<text><![CDATA[رقم بطاقة التعريف]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="3" width="100" height="30" uuid="a02eec14-5f1a-4ae7-afd6-e4110028b910"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="arial1"/>
+				</textElement>
+				<text><![CDATA[الهاتف]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="3" width="100" height="30" uuid="ec57c07d-9b7e-420f-bfa6-d2fcbadcdc2f"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="arial1"/>
+				</textElement>
+				<text><![CDATA[الملحقة الإدارية]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="3" width="100" height="30" uuid="6b6aee48-6bba-40cd-8ec8-c25b47411ee9"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="arial1"/>
+				</textElement>
+				<text><![CDATA[التوقيع]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="3" width="100" height="30" uuid="cf8c33ad-771e-4d17-af52-195b00052473"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="arial1"/>
+				</textElement>
+				<text><![CDATA[العنوان]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="700" y="-1" width="100" height="30" uuid="821e251f-5f92-4277-a082-e5b8dbb177e4"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

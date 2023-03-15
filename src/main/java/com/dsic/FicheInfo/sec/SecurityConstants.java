@@ -1,4 +1,4 @@
-package com.dsic.FicheInfo.services.sec;
+package com.dsic.FicheInfo.sec;
 
 public class SecurityConstants {
 

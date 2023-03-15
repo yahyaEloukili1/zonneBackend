@@ -1,9 +1,11 @@
-package com.dsic.FicheInfo.services.web;
+package com.dsic.FicheInfo.web;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.tomcat.util.http.parser.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,42 +28,32 @@ import net.sf.jasperreports.engine.JRException;
 public class FicheController {
 
 	@Autowired
-	AffectationRepository affectationRepository;
+	AffectationRepository ficheRepository;
 	@Autowired
 	ReportService reportService;
-	
 //	@GetMapping("/report/{format}")
 //	public String generateReport(@PathVariable String format) throws JRException, IOException  {
 //		return reportService.exportReport(format);
 //	}
 	@GetMapping("/report/{format}")
-	public String generateReport(@PathVariable String format) throws JRException, IOException  {
-		return reportService.exportReport(format,"C:\\allProjets.jrxml","\\allFichess.pdf");
+	public void generateReport(@PathVariable String format, HttpServletResponse response) throws JRException, IOException {
+	    reportService.exportReport(format, "C:\\allProjects1.jrxml", response);
 	}
+
 	@GetMapping("/report/{format}/{id}")
 	public String generateOneReport(@PathVariable String format,@PathVariable("id") int id) throws JRException, IOException  {
-		Affectation a = affectationRepository.findById(id).get();
-		
-		if(a.getType().equals("بيع")) {
-			
-			return reportService.exportOneReport(format,"C:\\ficheZonn2.jrxml","\\"+a.getCin()+"-"+a.getNum()+".pdf",id);
-		}else if(a.getType().equals("تسليم")) {
-			return reportService.exportOneReport(format,"C:\\ficheZonn.jrxml","\\"+a.getCin()+"-"+a.getNum()+".pdf",id);
-		}else {
-			return "";
-		}
-		
+		return reportService.exportOneReport(format,"C:\\fiche.jrxml","\\oneFiche.pdf",id);
 	}
 	
 	@GetMapping(path="fiche/{id}",produces=org.springframework.http.MediaType.APPLICATION_PDF_VALUE)
 	public byte[] getPhoto(@PathVariable("id") int id) throws IOException {
-		Affectation f = affectationRepository.findById(id).get();
+		//Affectation f = affectationRepository.findById(id).get();
 		//return Files.readAllBytes(Paths.get(System.getProperty("user.home")+"/Downloads/"+f.getFicheName()+".pdf"));
-	return Files.readAllBytes(Paths.get("C:\\report\\"+f.getFicheName()+".pdf"));
+	return Files.readAllBytes(Paths.get("C:\\report\\"+"dr"+".pdf"));
 	}
 	@GetMapping("/getLast")
 	public Affectation getLastFiche() {
-		List<Affectation> fiches = affectationRepository.findAll();
+		List<Affectation> fiches = ficheRepository.findAll();
 		int j = 0;
 		Affectation fiche = null;
 	for(int i=0;i<fiches.size();i++) {

@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -23,8 +26,9 @@ public class Affectation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column(unique=true)
+
 	private String numero;
+	private String signe;
 	private int farine;
 	private int sucr;
 	private int oeil;
@@ -32,11 +36,25 @@ public class Affectation {
 	private String cin;
 	private String nom;
 	private String prenom;
+	private  String fullName;
+	private String tele;
+	private String serviceName;
 	@Column(unique=true)
 	private String num;
 	private String ficheName;
+	private Boolean moahal;
+	private Boolean mokarar; 
+	@ManyToOne
+	private Service service;
+	@ManyToOne
+	private Categorie categorie;
+	@ManyToOne
+	private Stock stock;
+	@ManyToOne
+	private Type type2;
+	private String address;
 	public Affectation(int id, String numero, int farine, int sucr, int oeil, String type, String cin, String nom,
-			String prenom, String num, String ficheName, Date date) {
+			String prenom, String num, String ficheName, Date date,String Tele,String address,String signe,Boolean moahal,Boolean mokarar) {
 		super();
 		this.id = id;
 		this.numero = numero;
@@ -50,6 +68,92 @@ public class Affectation {
 		this.num = num;
 		this.ficheName = ficheName;
 		this.date = date;
+		this.tele= Tele;
+		this.address = address;
+		this.signe = signe;
+		this.moahal = moahal;
+		this.mokarar = mokarar;
+	}
+	
+	public String getSigne() {
+		return signe;
+	}
+
+	public void setSigne(String signe) {
+		this.signe = signe;
+	}
+
+	public Boolean getMoahal() {
+		return moahal;
+	}
+
+	public void setMoahal(Boolean moahal) {
+		this.moahal = moahal;
+	}
+
+	public Boolean getMokarar() {
+		return mokarar;
+	}
+
+	public void setMokarar(Boolean mokarar) {
+		this.mokarar = mokarar;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	
+	public String getFullName() {
+		return fullName;
+	}
+
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
+
+	public Stock getStock() {
+		return stock;
+	}
+
+	public void setStock(Stock stock) {
+		this.stock = stock;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getTele() {
+		return tele;
+	}
+
+	public void setTele(String tele) {
+		this.tele = tele;
+	}
+
+	public Service getService() {
+		return service;
+	}
+
+	public void setService(Service service) {
+		this.service = service;
+	}
+
+	public Categorie getCategorie() {
+		return categorie;
+	}
+
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
+	}
+
+	public Type getType2() {
+		return type2;
+	}
+
+	public void setType2(Type type2) {
+		this.type2 = type2;
 	}
 
 	public String getFicheName() {
@@ -57,6 +161,14 @@ public class Affectation {
 	}
 	public void setFicheName(String ficheName) {
 		this.ficheName = ficheName;
+	}
+
+	public String getServiceName() {
+		return serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
 	}
 
 	@JsonFormat(pattern="yyyy-MM-dd")

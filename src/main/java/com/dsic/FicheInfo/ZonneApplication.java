@@ -13,7 +13,12 @@ import com.dsic.FicheInfo.dao.RoleRepository;
 import com.dsic.FicheInfo.entities.Affectation;
 import com.dsic.FicheInfo.entities.AppRole;
 import com.dsic.FicheInfo.entities.AppUser;
+import com.dsic.FicheInfo.entities.Categorie;
+import com.dsic.FicheInfo.entities.Service;
+import com.dsic.FicheInfo.entities.Stock;
+import com.dsic.FicheInfo.entities.Type;
 import com.dsic.FicheInfo.services.AccountService;
+
 
 
 
@@ -36,13 +41,16 @@ public class ZonneApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		restConfiguration.exposeIdsFor(Affectation.class);
-		// TODO Auto-generated method stub
+		restConfiguration.exposeIdsFor(Service.class);
+		restConfiguration.exposeIdsFor(Categorie.class);
+		restConfiguration.exposeIdsFor(Type.class);
+		restConfiguration.exposeIdsFor(Stock.class);
 		if(accountService.finduserByUsrname("adminPdi")==null) {
 			accountService.save(new AppUser(null,"adminPdi","Laayoune2022@",null,null));
-			accountService.saveRole(new AppRole(null,"ADMIN"));
-			accountService.saveRole(new AppRole(null,"USER"));
-			accountService.addRoleToUser("adminPdi","ADMIN");
-			accountService.addRoleToUser("adminPdi","USER");
+		accountService.saveRole(new AppRole(null,"ADMIN"));
+		accountService.saveRole(new AppRole(null,"USER"));
+		accountService.addRoleToUser("adminPdi","ADMIN");
+		accountService.addRoleToUser("adminPdi","USER");
 		}
 		
 		

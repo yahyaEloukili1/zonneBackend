@@ -1,4 +1,4 @@
-package com.dsic.FicheInfo.services.sec;
+package com.dsic.FicheInfo.sec;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
@@ -27,8 +27,7 @@ public class SpringSecurity extends  WebSecurityConfigurerAdapter {
 		http.csrf().disable();
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		//http.formLogin();
-		http.authorizeRequests().antMatchers("/**").permitAll();
-		http.authorizeRequests().anyRequest().authenticated();
+		//http.authorizeRequests().anyRequest().authenticated();
 		http.addFilter(new JWTAuthenticationFilter(authenticationManager()));
 		http.addFilterBefore(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
 		
